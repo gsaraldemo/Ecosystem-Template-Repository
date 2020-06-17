@@ -1,0 +1,49 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Issues Summary",
+            "size": "Large",
+            "isSubtle": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "",
+            "spacing": "None"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Octicons-issue-opened.svg/1050px-Octicons-issue-opened.svg.png",
+                            "size": "Small"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "[Open Issues {{ openIssues }}]({{ openIssuesLink }})"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "[Unassigned Issues {{ openIssuesUnassigned }}]({{ openIssuesUnassignedLink }})",
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

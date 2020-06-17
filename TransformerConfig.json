@@ -7,24 +7,18 @@
         "TemplateName": "issue_opened.handlebars"
     },
     {
-        "SourceType": "PullRequestOpened",
+        "SourceType": "IssueSummary",
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
-        "TemplateName": "issue_opened.handlebars"
+        "TemplateName": "issue_summary.handlebars"
     },
     {
-        "SourceType": "IssueOpened",
+        "SourceType": "Custom",
         "ClientType": "Teams",
-        "TemplateType": "Liquid",
-        "TemplateName": "issue_opened.liquid"
+        "TemplateType": "HandleBars",
+        "TemplateName": "hello_name.handlebars"
     }
   ],
   "partials":[],
-  "eventTransformer":[
-    {
-      "SourceType":"IssueOpened",
-      "TemplateType":"HandleBars",
-      "TemplateName":"issue_opened.handlebars"
-    }
-  ]
+  "eventTransformer":[]
 }
