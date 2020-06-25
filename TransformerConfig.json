@@ -13,6 +13,12 @@
         "TemplateName": "issue_summary.handlebars"
     },
     {
+      "SourceType": "IssueReport",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "issue_report.handlebars"
+    },
+    {
         "SourceType": "Custom",
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
