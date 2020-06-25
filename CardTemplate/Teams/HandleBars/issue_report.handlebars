@@ -5,9 +5,10 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "Issues Report",
+            "text": "Issue Report",
             "size": "Large",
-            "isSubtle": true
+            "isSubtle": true,
+            "color": "warning"
         },
         {
             "type": "TextBlock",
@@ -24,7 +25,7 @@
                         {
                             "type": "Image",
                             "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Octicons-issue-opened.svg/1050px-Octicons-issue-opened.svg.png",
-                            "size": "Small"
+                            "size": "Large"
                         }
                     ]
                 },
@@ -34,15 +35,15 @@
                     "items": [
                         {
                             "type": "TextBlock",
-                            "text": "[All Issues {{ allIssues }}]({{ allIssuesLink }})"
+                            "text": "[All Issues : {{ allIssues }}]({{ allIssuesLink }})"
                         },
                                                 {
                             "type": "TextBlock",
-                            "text": "[Open Issues {{ openIssues }}]({{ openIssuesLink }})"
+                            "text": "[Open Issues : {{ openIssues }}]({{ openIssuesLink }})"
                         },
                         {
                             "type": "TextBlock",
-                            "text": "[Open Issues {{ closedIssues }}]({{ closedIssuesLink }})"
+                            "text": "[Open Issues : {{ closedIssues }}]({{ closedIssuesLink }})"
                         }
                     ]
                 }
