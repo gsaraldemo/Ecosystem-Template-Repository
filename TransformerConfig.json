@@ -17,7 +17,7 @@
       "ClientType": "Teams",
       "TemplateType": "HandleBars",
       "TemplateName": "issue_report.handlebars"
-    },
+   },
     {
         "SourceType": "Custom",
         "ClientType": "Teams",
