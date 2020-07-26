@@ -17,6 +17,12 @@
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
         "TemplateName": "hello_name.handlebars"
+    },
+    {
+        "SourceType": "PublishReport",
+        "ClientType": "Teams",
+        "TemplateType": "HandleBars",
+        "TemplateName": "publish_report.handlebars"
     }
   ],
   "partials":[],
