@@ -23,6 +23,12 @@
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
         "TemplateName": "publish_report.handlebars"
+    },
+    {
+        "SourceType": "IssuesTracker",
+        "ClientType": "Teams",
+        "TemplateType": "HandleBars",
+        "TemplateName": "issues_list.handlebars"
     }
   ],
   "partials":[],
