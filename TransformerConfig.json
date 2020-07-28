@@ -32,5 +32,16 @@
     }
   ],
   "partials":[],
-  "eventTransformer":[]
+  "eventTransformer":[
+    {
+        "SourceType": "JiraIssue",
+        "TemplateType": "HandleBars",
+        "TemplateName": "issues_jira.handlebars"
+    },
+    {
+        "SourceType": "ADOIssue",
+        "TemplateType": "HandleBars",
+        "TemplateName": "issues_ado.handlebars"
+    }
+  ]
 }
