@@ -1,24 +1,30 @@
 {
-  "cardRenderer":[
+  "cardRenderer": [
     {
-        "SourceType": "IssueOpened",
-        "ClientType": "Teams",
-        "TemplateType": "HandleBars",
-        "TemplateName": "issue_opened.handlebars"
+      "SourceType": "IssueOpened",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "issue_opened.handlebars"
     },
     {
-        "SourceType": "IssueSummary",
-        "ClientType": "Teams",
-        "TemplateType": "HandleBars",
-        "TemplateName": "issue_summary.handlebars"
+      "SourceType": "IssueSummary",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "issue_summary.handlebars"
     },
     {
-        "SourceType": "Custom",
-        "ClientType": "Teams",
-        "TemplateType": "HandleBars",
-        "TemplateName": "hello_name.handlebars"
+      "SourceType": "Custom",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "hello_name.handlebars"
+    },
+    {
+      "SourceType": "ScoreCard",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "eng_scorecard.handlebars"
     }
   ],
-  "partials":[],
-  "eventTransformer":[]
+  "partials": [],
+  "eventTransformer": []
 }
