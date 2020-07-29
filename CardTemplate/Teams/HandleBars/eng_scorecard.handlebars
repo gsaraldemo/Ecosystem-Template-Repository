@@ -33,6 +33,31 @@
               "text": "{{message.teamscorecard.scoreCardOutputs.StaleDTSs.name}}"
             }
           ]
+        },
+        {
+          "type":"Column",
+          "items":[
+            {
+              "type":"Image",
+              {{ #if message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.needsAttention}}
+              "url":"https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png",
+              {{else}}
+              "url":"https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png",
+              {{/if}}
+              "height": "20px",
+              "width": "20px"
+            },
+            {
+              "type":"Image",
+              {{ #if message.teamscorecard.scoreCardOutputs.StaleDTSs.needsAttention}}
+              "url":"https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png",
+              {{else}}
+              "url":"https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png",
+              {{/if}}
+              "height": "20px",
+              "width": "20px"
+            }
+          ]
         }
       ]
     }
