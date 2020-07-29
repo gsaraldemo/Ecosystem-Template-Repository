@@ -1,0 +1,10 @@
+{ "issues": [
+{{#each value}}
+  	{
+    	"title": "{{fields.[System.Title]}}",
+        "assignee": "{{fields.[System.AssignedTo].displayName}}",
+        "status": "{{fields.[System.State]}}"
+    },
+  {{/each}}
+  {}
+]}
