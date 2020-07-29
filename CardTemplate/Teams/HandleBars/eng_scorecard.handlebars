@@ -1,12 +1,42 @@
 {
-"type": "AdaptiveCard",
-"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-"version": "1.2",
-"body": [
-{
-"type": "TextBlock",
-"text": "{{ message.teamscorecard.teamDetails.name }}",
-"wrap": true
-}
-]
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "${message.teamscorecard.teamDetails.name}"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "[{{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.count}}](${{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.scoreCardQueryUrl}})"
+            },
+            {
+              "type": "TextBlock",
+              "text": "[${{message.teamscorecard.scoreCardOutputs.StaleDTSs.count}}](${{message.teamscorecard.scoreCardOutputs.StaleDTSs.scoreCardQueryUrl}})"
+            }
+          ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "${{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.name}}"
+            },
+            {
+              "type": "TextBlock",
+              "text": "${{message.teamscorecard.scoreCardOutputs.StaleDTSs.name}}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2"
 }
