@@ -25,7 +25,7 @@
         "TemplateName": "publish_report.handlebars"
     },
     {
-        "SourceType": "IssuesTracker",
+        "SourceType": "IssueTracker",
         "ClientType": "Teams",
         "TemplateType": "HandleBars",
         "TemplateName": "issues_list.handlebars"
