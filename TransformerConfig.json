@@ -36,12 +36,12 @@
     {
         "SourceType": "JiraIssue",
         "TemplateType": "HandleBars",
-        "TemplateName": "issues_jira.handlebars"
+        "TemplateName": "issue_jira.handlebars"
     },
     {
         "SourceType": "ADOIssue",
         "TemplateType": "HandleBars",
-        "TemplateName": "issues_ado.handlebars"
+        "TemplateName": "issue_ado.handlebars"
     }
   ]
 }
