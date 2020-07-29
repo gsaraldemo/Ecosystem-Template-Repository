@@ -16,11 +16,19 @@
           "items": [
             {
               "type": "TextBlock",
-              "text": "[{{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.count}}]({{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.scoreCardQueryUrl}})"
+              "text": "[{{message.teamscorecard.scoreCardOutputs.StaleLsiRepairItems.count}}]({{message.teamscorecard.scoreCardOutputs.StaleLsiRepairItems.scoreCardQueryUrl}})"
             },
             {
               "type": "TextBlock",
               "text": "[{{message.teamscorecard.scoreCardOutputs.StaleDTSs.count}}]({{message.teamscorecard.scoreCardOutputs.StaleDTSs.scoreCardQueryUrl}})"
+            },
+            {
+              "type": "TextBlock",
+              "text": "[{{message.teamscorecard.scoreCardOutputs.ActiveP0Bugs.count}}]({{message.teamscorecard.scoreCardOutputs.ActiveP0Bugs.scoreCardQueryUrl}})"
+            },
+            {
+              "type": "TextBlock",
+              "text": "[{{message.teamscorecard.scoreCardOutputs.StaleP1Bugs.count}}]({{message.teamscorecard.scoreCardOutputs.StaleP1Bugs.scoreCardQueryUrl}})"
             }
           ]
         },
@@ -30,12 +38,20 @@
           "items": [
             {
               "type": "TextBlock",
-              "text": "{{message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.name}}"
+              "text": "{{message.teamscorecard.scoreCardOutputs.StaleLsiRepairItems.name}}"
             },
             {
               "type": "TextBlock",
               "text": "{{message.teamscorecard.scoreCardOutputs.StaleDTSs.name}}"
-            }
+            },
+            {
+              "type": "TextBlock",
+              "text": "{{message.teamscorecard.scoreCardOutputs.ActiveP0Bugs.name}}"
+            },
+            {
+              "type": "TextBlock",
+              "text": "{{message.teamscorecard.scoreCardOutputs.StaleP1Bugs.name}}"
+            }            
           ]
         },
         {
@@ -43,7 +59,7 @@
           "items":[
             {
               "type":"Image",
-              {{#if message.teamscorecard.scoreCardOutputs.StaleAccessibilityBugs.needsAttention}}
+              {{#if message.teamscorecard.scoreCardOutputs.StaleLsiRepairItems.needsAttention}}
               "url":"https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png",
               {{else}}
               "url":"https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png",
@@ -60,7 +76,27 @@
               {{/if}}
               "height": "20px",
               "width": "20px"
-            }
+            },
+            {
+              "type":"Image",
+              {{#if message.teamscorecard.scoreCardOutputs.ActiveP0Bugs.needsAttention}}
+              "url":"https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png",
+              {{else}}
+              "url":"https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png",
+              {{/if}}
+              "height": "20px",
+              "width": "20px"
+            },
+            {
+              "type":"Image",
+              {{#if message.teamscorecard.scoreCardOutputs.StaleP1Bugs.needsAttention}}
+              "url":"https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png",
+              {{else}}
+              "url":"https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png",
+              {{/if}}
+              "height": "20px",
+              "width": "20px"
+            }            
           ]
         }
       ]
