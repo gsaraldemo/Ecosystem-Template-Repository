@@ -39,7 +39,7 @@
         "TemplateName": "issue_jira.handlebars"
     },
     {
-        "SourceType": "ADOIssue",
+        "SourceType": "AdoIssue",
         "TemplateType": "HandleBars",
         "TemplateName": "issue_ado.handlebars"
     }
