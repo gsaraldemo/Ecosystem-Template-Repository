@@ -1,22 +1,10 @@
 {
   "cardRenderer": [
     {
-      "SourceType": "IssueOpened",
+      "SourceType": "PublishReport",
       "ClientType": "Teams",
       "TemplateType": "HandleBars",
-      "TemplateName": "issue_opened.handlebars"
-    },
-    {
-      "SourceType": "IssueSummary",
-      "ClientType": "Teams",
-      "TemplateType": "HandleBars",
-      "TemplateName": "issue_summary.handlebars"
-    },
-    {
-      "SourceType": "Custom",
-      "ClientType": "Teams",
-      "TemplateType": "HandleBars",
-      "TemplateName": "hello_name.handlebars"
+      "TemplateName": "publish_report.handlebars"
     },
     {
       "SourceType": "ScoreCard",
