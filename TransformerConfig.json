@@ -4,7 +4,7 @@
       "SourceType": "PublishReport",
       "ClientType": "Teams",
       "TemplateType": "HandleBars",
-      "TemplateName": "publish_report.handlebars"
+      "TemplateName": "npm_publish_report.handlebars"
     },
     {
       "SourceType": "ScoreCard",
