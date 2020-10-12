@@ -1,4 +1,20 @@
 {
-  "gaurav": "saral",
-  "service" : "{{message.data.service.id}}"
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.3",
+    "body": [
+        {
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "Service",
+                    "value": "{{message.data.service.name}}"
+                },
+                {
+                    "title": "Maintainer",
+                    "value": "{{message.data.service.maintainer.name}}"
+                }
+            ]
+        }
+    ]
 }
