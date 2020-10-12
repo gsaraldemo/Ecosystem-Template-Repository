@@ -37,6 +37,25 @@
               "url": ""
             }
           ]
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Max Score"
+            },
+            {{#each message.data.service.scorecards.edges}}
+              {
+                "type": "TextBlock",
+                "text": "{{this.node.description.scorecardSummaries.nodes[0].maxScore}}"
+              },
+            {{/each}}
+            {
+              "type": "TextBlock",
+              "url": ""
+            }
+          ]
         }
       ]
     }
