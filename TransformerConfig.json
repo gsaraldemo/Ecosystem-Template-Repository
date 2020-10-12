@@ -11,6 +11,12 @@
       "ClientType": "Teams",
       "TemplateType": "HandleBars",
       "TemplateName": "eng_scorecard.handlebars"
+    },
+    {
+      "SourceType": "CatalogScoreCard",
+      "ClientType": "Teams",
+      "TemplateType": "HandleBars",
+      "TemplateName": "catalog_eng_scorecard.handlebars"
     }
   ],
   "partials": [],
