@@ -48,7 +48,7 @@
             {{#each message.data.service.scorecards.edges}}
               {
                 "type": "TextBlock",
-                "text": "{{this.node.description.scorecardSummaries.nodes[0].maxScore}}"
+                "text": "{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               },
             {{/each}}
             {
@@ -67,7 +67,7 @@
             {{#each message.data.service.scorecards.edges}}
               {
                 "type": "TextBlock",
-                "text": "{{this.node.description.scorecardSummaries.nodes[0].score}}"
+                "text": "{{this.node.scorecardSummaries.nodes.0.score}}"
               },
             {{/each}}
             {
