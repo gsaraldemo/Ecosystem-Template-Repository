@@ -1,3 +1,5 @@
-{{#each data.service.scorecards.edges}}
-  {{this.node.name}}
-{{/each}}
+{
+  {{#each data.service.scorecards.edges}}
+    {{this.node.name}}: "value",
+  {{/each}}
+}
