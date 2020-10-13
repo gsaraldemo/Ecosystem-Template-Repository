@@ -25,12 +25,12 @@
 		{{#each this.data.service.scorecards.edges}}
 		{{#if @last}}
 			{
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "{{this.node.description}}"
               }
 		{{else}}
               {
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "{{this.node.description}}"
               },
 		{{/if}}
@@ -42,12 +42,12 @@
 		{{#each this.data.service.scorecards.edges}}
 		{{#if @last}}
 			{
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               }
 		{{else}}
               {
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               },
 			 {{/if}}
@@ -80,12 +80,12 @@
 		{{#each this.data.service.scorecards.edges}}
 		{{#if @last}}
 			{
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "{{this.node.description}}"
               }
 		{{else}}
               {
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "{{this.node.description}}"
               },
 		{{/if}}
@@ -97,12 +97,12 @@
 		{{#each this.data.service.scorecards.edges}}
 		{{#if @last}}
 			{
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               }
 		{{else}}
               {
-                "type": "plain_text",
+                "type": "mrkdwn",
                 "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               },
 			 {{/if}}
