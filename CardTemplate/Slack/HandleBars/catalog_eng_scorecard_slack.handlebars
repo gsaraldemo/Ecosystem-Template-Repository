@@ -1,5 +1,61 @@
 {
 {{#each message}}
+{{#if @last}}
+			"blocks": [
+	  {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n*Maintainer*"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "Description"
+		},
+		{{#each this.data.service.scorecards.edges}}
+		{{#if @last}}
+			{
+                "type": "plain_text",
+                "text": "{{this.node.description}}"
+              }
+		{{else}}
+              {
+                "type": "plain_text",
+                "text": "{{this.node.description}}"
+              },
+		{{/if}}
+        {{/each}}
+		{
+			"type": "mrkdwn",
+			"text": "Score/Max Score"
+		},
+		{{#each this.data.service.scorecards.edges}}
+		{{#if @last}}
+			{
+                "type": "plain_text",
+                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
+              }
+		{{else}}
+              {
+                "type": "plain_text",
+                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
+              },
+			 {{/if}}
+        {{/each}}
+		]
+	   }		
+    ]
+		{{else}}
    "blocks": [
 	  {
         "type": "section",
@@ -55,5 +111,6 @@
 	   }		
     ]
 	,
+	{{/if}}
     {{/each}}
 }
