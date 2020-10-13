@@ -22,16 +22,10 @@
 			"type": "mrkdwn",
 			"text": "Description"
 		},
-		{{#each this.data.service.scorecards.edges}}
-		{{setvar "description" ""}}
-		{{#if @last}}
-			{{setvar description {{this.node.description}} \n}}
-		{{/if}}
-        {{/each}}
-		{
+			{
                 "type": "mrkdwn",
-                "text": "{{description}}"
-        },
+                "text": "{{#each this.data.service.scorecards.edges}}{{this.node.description}}{{/each}}"
+              }
 		{
 			"type": "mrkdwn",
 			"text": "Score/Max Score"
