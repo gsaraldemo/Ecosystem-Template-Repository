@@ -1,52 +1,4 @@
-{
-{{#each message}}
-{{#if @last}}
-	 "blocks": [
-	  {
-        "type": "section",
-		"fields": [
-		{
-			"type": "mrkdwn",
-			"text": "*Service*\n*Maintainer*"
-		},
-		{
-			"type": "mrkdwn",
-			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
-		}
-		]
-	   },
-	   {
-        "type": "section",
-		"fields": [
-		{
-			"type": "mrkdwn",
-			"text": "Description"
-		},
-			{
-                "type": "mrkdwn",
-                "text": "{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
-              }
-		{
-			"type": "mrkdwn",
-			"text": "Score/Max Score"
-		},
-		{{#each this.data.service.scorecards.edges}}
-		{{#if @last}}
-			{
-                "type": "mrkdwn",
-                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
-              }
-		{{else}}
-              {
-                "type": "mrkdwn",
-                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
-              },
-			 {{/if}}
-        {{/each}}
-		]
-	   }		
-    ]
-		{{else}}
+ {
    "blocks": [
 	  {
         "type": "section",
@@ -57,7 +9,7 @@
 		},
 		{
 			"type": "mrkdwn",
-			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+			"text": "teams-integration\ngauravsaralms"
 		}
 		]
 	   },
@@ -68,40 +20,72 @@
 			"type": "mrkdwn",
 			"text": "Description"
 		},
-		{{#each this.data.service.scorecards.edges}}
-		{{#if @last}}
-			{
-                "type": "mrkdwn",
-                "text": "{{this.node.description}}"
-              }
-		{{else}}
               {
                 "type": "mrkdwn",
-                "text": "{{this.node.description}}"
+                "text": "Durable Ownership"
               },
-		{{/if}}
-        {{/each}}
+			{
+                "type": "mrkdwn",
+                "text": "Incident Readiness"
+              }
 		{
 			"type": "mrkdwn",
 			"text": "Score/Max Score"
 		},
-		{{#each this.data.service.scorecards.edges}}
-		{{#if @last}}
-			{
-                "type": "mrkdwn",
-                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
-              }
-		{{else}}
               {
                 "type": "mrkdwn",
-                "text": "*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
+                "text": "*115*/115"
               },
-			 {{/if}}
-        {{/each}}
+			{
+                "type": "mrkdwn",
+                "text": "*71*/71"
+              }
 		]
 	   }		
     ]
 	,
-	{{/if}}
-    {{/each}}
+	 "blocks": [
+	  {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n*Maintainer*"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "slack-integration\ngauravsaralms"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "Description"
+		},
+			{
+                "type": "mrkdwn",
+                "text": "Durable Ownership\nIncident Readiness\nAppSec Scorecard\n"
+              }
+		{
+			"type": "mrkdwn",
+			"text": "Score/Max Score"
+		},
+              {
+                "type": "mrkdwn",
+                "text": "*115*/115"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "*71*/71"
+              },
+			{
+                "type": "mrkdwn",
+                "text": "*100*/190"
+              }
+		]
+	   }		
+    ]
 }
