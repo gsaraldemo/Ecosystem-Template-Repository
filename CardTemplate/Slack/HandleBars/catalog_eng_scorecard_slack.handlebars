@@ -1,7 +1,7 @@
 {
+"blocks": [
 {{#each message}}
 {{#if @last}}
-	 "blocks": [
 	  {
         "type": "section",
 		"fields": [
@@ -28,9 +28,7 @@
               }
 		]
 	   }		
-    ]
 		{{else}}
-"blocks": [
 	  {
         "type": "section",
 		"fields": [
@@ -57,8 +55,8 @@
               }
 		]
 	   }		
-    ]
 	,
 	{{/if}}
     {{/each}}
+	]
 }
