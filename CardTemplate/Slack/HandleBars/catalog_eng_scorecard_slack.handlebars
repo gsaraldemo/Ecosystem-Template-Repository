@@ -1,17 +1,26 @@
 {
    "blocks": [
 	  {
-       "type": "section",
-		   "fields": [
-		  {
-			  "type": "mrkdwn",
-			  "text": "*Service*\n*Maintainer*"
-		  },
-		  {
-			  "type": "mrkdwn",
-			  "text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
-		  }		
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n*Maintainer*"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+		}
 		]
-	 }
- ]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "Description{{#each this.data.service.scorecards.edges}}\n{{this.node.description}}{{/each}}"
+		}
+		]
+	   }		
+    ]
 }
