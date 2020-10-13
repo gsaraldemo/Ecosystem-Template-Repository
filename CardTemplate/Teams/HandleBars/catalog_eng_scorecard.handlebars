@@ -76,6 +76,27 @@
               "url": ""
             }
           ]
+        },
+		                {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "Status"
+            },
+            {{#each this.data.service.scorecards.edges}}
+              {
+                "type": "Image",
+                "url": "{{this.node.scorecardSummaries.nodes.0.Status}}",
+				"height": "18px",
+				"width": "18px"
+              },
+            {{/each}}
+            {
+              "type": "TextBlock",
+              "url": ""
+            }
+          ]
         }
       ]
     },
