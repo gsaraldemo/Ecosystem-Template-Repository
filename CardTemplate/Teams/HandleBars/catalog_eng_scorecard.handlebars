@@ -5,10 +5,18 @@
   "body": [
     {{#each message}}
     {
-	    "type": "TextBlock",
-	    "text": "{{this.data.service.name}}",
-	    "wrap": true
-    },
+		  "type": "FactSet",
+		  "facts": [
+			{
+			  "title": "Service",
+			  "value": "{{this.data.service.name}}"
+			},
+			{
+			  "title": "Maintainer",
+			  "value": "{{this.data.service.maintainer.name}}"
+			}
+		  ]
+		},
     {{/each}}
     {
 	    "type": "TextBlock",
