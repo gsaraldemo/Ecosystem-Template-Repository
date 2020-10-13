@@ -19,7 +19,7 @@
       "TemplateName": "catalog_eng_scorecard.handlebars"
     },
     {
-      "SourceType": "CatalogScoreCard",
+      "SourceType": "CatalogScoreCard1",
       "ClientType": "Teams",
       "TemplateType": "HandleBars",
       "TemplateName": "catalog_eng_scorecard_slack.handlebars"
