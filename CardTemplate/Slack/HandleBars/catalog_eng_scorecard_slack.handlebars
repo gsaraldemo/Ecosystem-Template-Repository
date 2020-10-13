@@ -1,7 +1,7 @@
 {
 {{#each message}}
 {{#if @last}}
-			"blocks": [
+	 "blocks": [
 	  {
         "type": "section",
 		"fields": [
@@ -23,18 +23,15 @@
 			"text": "Description"
 		},
 		{{#each this.data.service.scorecards.edges}}
+		{{setvar "description" ""}}
 		{{#if @last}}
-			{
-                "type": "mrkdwn",
-                "text": "{{this.node.description}}"
-              }
-		{{else}}
-              {
-                "type": "mrkdwn",
-                "text": "{{this.node.description}}"
-              },
+			{{setvar description {{concat {{description}} {{this.node.description}} \n}}
 		{{/if}}
         {{/each}}
+		{
+                "type": "mrkdwn",
+                "text": "{{description}}"
+        },
 		{
 			"type": "mrkdwn",
 			"text": "Score/Max Score"
