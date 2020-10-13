@@ -7,11 +7,11 @@
 		"fields": [
 		{
 			"type": "mrkdwn",
-			"text": "*Service*\n*Maintainer*"
+			"text": "*Service*\n{{this.data.service.name}}"
 		},
 		{
 			"type": "mrkdwn",
-			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
 		}
 		]
 	   },
@@ -20,11 +20,11 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "Description\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
+                "text": "*Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
-                "text": "Score/Max Score\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+                "text": "*Score/Max Score*\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
 	   }		
@@ -36,11 +36,11 @@
 		"fields": [
 		{
 			"type": "mrkdwn",
-			"text": "*Service*\n*Maintainer*"
+			"text": "*Service*\n{{this.data.service.name}}"
 		},
 		{
 			"type": "mrkdwn",
-			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
 		}
 		]
 	   },
@@ -49,11 +49,11 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "Description\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
+                "text": "*Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
-                "text": "Score/Max Score\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+                "text": "*Score/Max Score*\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
 	   }		
