@@ -34,17 +34,7 @@
 		{{#each this.data.service.scorecards.edges}}
               {
                 "type": "plain_text",
-                "text": "{{this.node.scorecardSummaries.nodes.0.Score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
-              },
-        {{/each}}
-		{
-			"type": "mrkdwn",
-			"text": "Score"
-		},
-		{{#each this.data.service.scorecards.edges}}
-              {
-                "type": "plain_text",
-                "text": "{{this.node.scorecardSummaries.nodes.0.Score}}"
+                "text": "{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.Score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
               },
         {{/each}}
 		{
