@@ -1,49 +1,6 @@
- {
-   "blocks": [
-	  {
-        "type": "section",
-		"fields": [
-		{
-			"type": "mrkdwn",
-			"text": "*Service*\n*Maintainer*"
-		},
-		{
-			"type": "mrkdwn",
-			"text": "teams-integration\ngauravsaralms"
-		}
-		]
-	   },
-	   {
-        "type": "section",
-		"fields": [
-		{
-			"type": "mrkdwn",
-			"text": "Description"
-		},
-              {
-                "type": "mrkdwn",
-                "text": "Durable Ownership"
-              },
-			{
-                "type": "mrkdwn",
-                "text": "Incident Readiness"
-              }
-		{
-			"type": "mrkdwn",
-			"text": "Score/Max Score"
-		},
-              {
-                "type": "mrkdwn",
-                "text": "*115*/115"
-              },
-			{
-                "type": "mrkdwn",
-                "text": "*71*/71"
-              }
-		]
-	   }		
-    ]
-	,
+{
+{{#each message}}
+{{#if @last}}
 	 "blocks": [
 	  {
         "type": "section",
@@ -54,38 +11,54 @@
 		},
 		{
 			"type": "mrkdwn",
-			"text": "slack-integration\ngauravsaralms"
+			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
 		}
 		]
 	   },
 	   {
         "type": "section",
 		"fields": [
-		{
-			"type": "mrkdwn",
-			"text": "Description"
-		},
 			{
                 "type": "mrkdwn",
-                "text": "Durable Ownership\nIncident Readiness\nAppSec Scorecard\n"
-              }
-		{
-			"type": "mrkdwn",
-			"text": "Score/Max Score"
-		},
-              {
-                "type": "mrkdwn",
-                "text": "*115*/115"
+                "text": "Description\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
-                "text": "*71*/71"
-              },
-			{
-                "type": "mrkdwn",
-                "text": "*100*/190"
+                "text": "Score/Max Score\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
 	   }		
     ]
+		{{else}}
+"blocks": [
+	  {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n*Maintainer*"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "{{this.data.service.name}}\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+			{
+                "type": "mrkdwn",
+                "text": "Description\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "Score/Max Score\n*{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              }
+		]
+	   }		
+    ]
+	,
+	{{/if}}
+    {{/each}}
 }
