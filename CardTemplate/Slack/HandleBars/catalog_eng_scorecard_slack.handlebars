@@ -20,11 +20,11 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "*Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.Status}} {{this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
-                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
 	   }		
@@ -47,11 +47,11 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "*Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.description}}\n{{/each}}"
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.Status}} {{this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
-                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}*{{this.node.scorecardSummaries.nodes.0.score}}*/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
 	   }		
