@@ -34,11 +34,30 @@
 		{{#each this.data.service.scorecards.edges}}
               {
                 "type": "plain_text",
+                "text": "{{this.node.scorecardSummaries.nodes.0.Score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}"
+              },
+        {{/each}}
+		{
+			"type": "mrkdwn",
+			"text": "Score"
+		},
+		{{#each this.data.service.scorecards.edges}}
+              {
+                "type": "plain_text",
                 "text": "{{this.node.scorecardSummaries.nodes.0.Score}}"
               },
         {{/each}}
+		{
+			"type": "mrkdwn",
+			"text": "dummy"
+		}
 		]
 	   }		
     ]
+	,
     {{/each}}
+    "text": {
+    "text": "A message *with some bold text* and _some italicized text_.",
+    "type": "mrkdwn"
+  }
 }
