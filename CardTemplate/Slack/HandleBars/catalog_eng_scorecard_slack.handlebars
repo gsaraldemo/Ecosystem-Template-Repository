@@ -1,31 +1,65 @@
 {
-  "type": "customPayload",
-  "actual_payload": {
-    "text": "hello from repo dispatch",
-    "attachments": [
-      {
-        "fallback": "Plain-text summary of the attachment.",
-        "color": "#2EB886",
-        "pretext": "Optional text that appears above the attachment block",
-        "author_name": "Bobby Tables",
-        "author_link": "http://flickr.com/bobby/",
-        "author_icon": "http://flickr.com/icons/bobby.jpg",
-        "title": "Slack API Documentation",
-        "title_link": "https://api.slack.com/",
-        "text": "Optional text that appears within the attachment",
-        "fields": [
-          {
-            "title": "Priority",
-            "value": "High",
-            "short": false
-          }
-        ],
-        "image_url": "http://my-website.com/path/to/image.jpg",
-        "thumb_url": "http://example.com/path/to/thumb.png",
-        "footer": "Slack API",
-        "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
-        "ts": 123456789
-      }
-    ]
+"type": "customPayload",
+"actual_payload":{
+"blocks": [
+{{#each message}}
+{{#if @last}}
+	  {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n{{truncate this.data.service.name}}"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+			{
+                "type": "mrkdwn",
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status  'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2714{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              }
+		]
+	   }		
+		{{else}}
+	  {
+        "type": "section",
+		"fields": [
+		{
+			"type": "mrkdwn",
+			"text": "*Service*\n{{truncate this.data.service.name}}"
+		},
+		{
+			"type": "mrkdwn",
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+			{
+                "type": "mrkdwn",
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2714{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              }
+		]
+	   }		
+	,
+	{{/if}}
+    {{/each}}
+   ]
   }
 }
