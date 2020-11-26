@@ -4,19 +4,20 @@
 "blocks": [
 	  {
         "type": "section",
-		"fields": [
-		{
+	"fields": [
+		   {
 			"type": "mrkdwn",
 			"text": "*Service*"
-		}
-		{{#each message}}
-		,
-		{
+		   }
+		  {{#each message}}
+		  ,
+		  {
 		    "type": "plain_text",
 		     "text": "{{truncate this.data.service.name}}"
-		}
+		  }
 		{{/each}}
-    ]
+          ]
+      }
    ]
   }
 }
