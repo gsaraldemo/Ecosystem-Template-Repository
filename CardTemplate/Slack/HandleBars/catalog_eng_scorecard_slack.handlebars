@@ -22,7 +22,7 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status  'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2705{{else}}\u274{{/if}} {{truncate this.node.description}}\n{{/each}}"
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status  'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2705{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
@@ -49,7 +49,7 @@
 		"fields": [
 			{
                 "type": "mrkdwn",
-                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2705{{else}}\u274{{/if}} {{truncate this.node.description}}\n{{/each}}"
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2705{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
               },
               {
                 "type": "mrkdwn",
