@@ -4,9 +4,6 @@
 "blocks": [
 {{#each message}}
 {{#if @last}}
-	{
-		"type": "divider"
-	},
 	  {
         "type": "section",
 		"fields": [
@@ -34,6 +31,9 @@
 		]
 	   }		
 		{{else}}
+			{
+		"type": "divider"
+	},
 	  {
         "type": "section",
 		"fields": [
