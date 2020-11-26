@@ -8,8 +8,15 @@
 		"fields": [
 		{
 			"type": "mrkdwn",
-			"text": "*Service*\n{{#each message}}{{truncate this.data.service.name}}\n{{\each}}"
+			"text": "*Service*"
 		}
+		{{#each message}}
+		,
+		{
+		    "type": "plain_text",
+		     "text": "{{truncate this.data.service.name}}"
+		}
+		{{\each}}
     ]
     {{/each}}
    ]
