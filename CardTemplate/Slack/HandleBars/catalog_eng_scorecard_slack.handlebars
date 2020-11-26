@@ -5,7 +5,7 @@
 {{#each message}}
 {{#if @last}}
 	  {
-        "type": "section",
+        	"type": "section",
 		"fields": [
 		{
 			"type": "mrkdwn",
@@ -15,22 +15,22 @@
 			"type": "mrkdwn",
 			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
 		}
-		]
+	     ]
 	   },
 	   {
-        "type": "section",
+        	"type": "section",
 		"fields": [
 			{
                 "type": "mrkdwn",
                 "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status  'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2705{{else}}\u274C{{/if}} {{truncate this.node.description}}\n{{/each}}"
-              },
-              {
+                },
+                {
                 "type": "mrkdwn",
                 "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
-              }
-		]
+                }
+	     ]
 	   }		
-		{{else}}
+{{else}}
 	  {
         "type": "section",
 		"fields": [
@@ -58,8 +58,8 @@
 		]
 	   }		
 	,
-				{
-		"type": "divider"
+	{
+	    "type": "divider"
 	},
 	{{/if}}
     {{/each}}
