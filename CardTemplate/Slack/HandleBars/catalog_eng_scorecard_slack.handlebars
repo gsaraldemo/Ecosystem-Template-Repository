@@ -2,38 +2,64 @@
 "type": "customPayload",
 "actual_payload":{
 "blocks": [
+{{#each message}}
+{{#if @last}}
 	  {
         "type": "section",
-	"fields": [
-		   {
+		"fields": [
+		{
 			"type": "mrkdwn",
-			"text": "*Service*"
-		   },
-		   {
+			"text": "*Service*\n{{truncate this.data.service.name}}"
+		},
+		{
 			"type": "mrkdwn",
-			"text": "*Maintainer*"
-		   },
-		   {
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+			{
+                "type": "mrkdwn",
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status  'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2714{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              }
+		]
+	   }		
+		{{else}}
+	  {
+        "type": "section",
+		"fields": [
+		{
 			"type": "mrkdwn",
-			"text": "*Durable Ownership*"
-		   },
-		   {
+			"text": "*Service*\n{{truncate this.data.service.name}}"
+		},
+		{
 			"type": "mrkdwn",
-			"text": "*Incident Readiness*"
-		   },
-		   {
-			"type": "mrkdwn",
-			"text": "*Application Security*"
-		   }
-		  {{#each message}}
-		  ,
-		  {
-		    "type": "plain_text",
-		     "text": "{{truncate this.data.service.name}}"
-		  }
-		{{/each}}
-          ]
-      }
+			"text": "*Maintainer*\n{{this.data.service.maintainer.name}}"
+		}
+		]
+	   },
+	   {
+        "type": "section",
+		"fields": [
+			{
+                "type": "mrkdwn",
+                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/green-tick-png-hd-green-tick-png-image-600.png')}}\u2714{{else}}\u2716{{/if}} {{truncate this.node.description}}\n{{/each}}"
+              },
+              {
+                "type": "mrkdwn",
+                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              }
+		]
+	   }		
+	,
+	{{/if}}
+    {{/each}}
    ]
   }
 }
