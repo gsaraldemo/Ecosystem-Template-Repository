@@ -33,7 +33,7 @@
 		{{/if}}
 		"text": {
 			"type": "mrkdwn",
-			{{#if (ifEq failure true)}}
+			{{#if (ifEq failure "true")}}
 			"text": "Hurray everything passed {{fieldsNeeded}} {{failure}} test"
 			{{else}}
 			"text": "t passed {{fieldsNeeded}} {{failure}} test"
