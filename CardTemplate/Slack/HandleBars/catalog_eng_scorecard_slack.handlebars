@@ -30,7 +30,7 @@
 				{{#if (ifEq ../passedServices "")}}
 					{{setVar passedServices this.data.service.name}}}
 				{{else}}
-					{{setVar (appendCommaWithTwoStrings ../passedServices this.data.service.name)}}
+					{{setVar passedServices (appendCommaWithTwoStrings ../passedServices this.data.service.name)}}
 				{{/if}}
 			{{/if}}
 		{{/each}}
