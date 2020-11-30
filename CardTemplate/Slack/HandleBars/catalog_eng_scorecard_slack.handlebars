@@ -15,9 +15,9 @@
                 "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
               }
 		]
-	   }		
-	,
+	   }
 	{{#if @last}}
+	,
 	"text": {
 			"type": "mrkdwn",
 			"text": "Hurray everything passed"
