@@ -39,10 +39,12 @@
 		{{/if}}
 		"text": {
 			"type": "mrkdwn",
-			{{#if (ifEq failure "true")}}
-			"text": "Hurray {{passedServices}} passed"
+			{{#if (ifEq passedServices "")}}
+				"text": 'Uh-oh!! none of the services passed'
+			{{else if (ifEq fieldsNeeded "true")}}
+				"text": '🎉🎉 Hurray!! **{{passedServices}}** services have passed and here are the failures'
 			{{else}}
-			"text": "t passed {{passedServices}} test"
+				"text": '🎉🎉 Hurray!! **{{passedServices}}** services have passed'
 			{{/if}}
 		}
 	}
