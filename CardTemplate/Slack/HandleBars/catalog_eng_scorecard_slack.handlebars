@@ -10,7 +10,7 @@
 			"fields": [
 					{
                 				"type": "mrkdwn",
-                				"text": {{@data.fieldsNeeded}}
+                				"text": {{../fieldsNeeded}}
 					}
 				]
 			{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}{{/if}}{{/each}}
