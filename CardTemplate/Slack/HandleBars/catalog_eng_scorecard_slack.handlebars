@@ -49,8 +49,10 @@
 			"type": "mrkdwn",
 			{{#if (ifEq passedServices "")}}
 				"text": "Uh-oh!! none of the services are green"
+			{{else if (ifEq fieldsNeeded "true")}}
+				"text": ":tada::tada::tada: Hurray, *{{passedServices}}* are green in service catalog. Below services need your attention."
 			{{else}}
-				"text": ":tada::tada: Hurray, *{{passedServices}}* are green in service catalog."
+				"text": ":tada::tada::tada: Hurray, *{{passedServices}}* are green in service catalog. None of the services need your attention."
 			{{/if}}
 		}
 	}
