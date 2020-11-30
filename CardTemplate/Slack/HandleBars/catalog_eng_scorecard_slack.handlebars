@@ -7,16 +7,10 @@
 		{{setVar "fieldsNeeded" "false"}}
 		{{#each message}}
 			{{setVar "failure" "false"}}
-			"fields": [
-					{
-                				"type": "mrkdwn",
-                				"text": {{../fieldsNeeded}}
-					}
-				]
 			{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}{{/if}}{{/each}}
-			{{#if (ifEq failure "true")}}
+			{{#if (ifEq ../failure "true")}}
 				{{!--found something wrong, should start fields--}}
-				{{#if (ifEq filedsNeeded "true")}}
+				{{#if (ifEq ../filedsNeeded "true")}}
 					,
 				{{else}}
 					{{setVar "fieldsNeeded" "true"}}
@@ -32,15 +26,9 @@
               				}
 			{{else}}
 				{{!-- add the service name to hurray message--}}
-				"fields": [
-					{
-                				"type": "mrkdwn",
-                				"text": {{failure}}
-					}
-				]
 			{{/if}}
 		{{/each}}
-		{{#if (ifEq filedsNeeded "true")}}
+		{{#if (ifEq ../filedsNeeded "true")}}
 			],
 		{{/if}}
 		"text": {
