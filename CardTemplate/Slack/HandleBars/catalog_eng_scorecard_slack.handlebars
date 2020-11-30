@@ -19,11 +19,11 @@
 				{{/if}}
 					{
                 				"type": "mrkdwn",
-                				"text": "*Service:* {{this.data.service.name}}"
+                				"text": "*Service:* {{truncate this.data.service.name}}"
 					},
 					{
                 				"type": "mrkdwn",
-                				"text": "*Owner:* {{this.data.service.maintainer.name}}"
+                				"text": "*Owner:* {{truncate this.data.service.maintainer.name}}"
 					},
 					{
                 				"type": "mrkdwn",
