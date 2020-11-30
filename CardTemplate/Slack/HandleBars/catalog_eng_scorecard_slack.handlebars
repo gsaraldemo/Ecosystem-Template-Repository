@@ -4,20 +4,48 @@
 "blocks": [
 	{
 		"type": "section",
+		{{setVar "fieldsNeeded" "false"}}
+		{{#each message}}
+			{{setVar "failure" "false"}}
+			{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}{{/if}}{{/each}}
+			{{#if {{failure}}}}
+				{{!--found something wrong, should start fields--}}
+				{{#if filedsNeeded}}
+					,
+				{{else}}
+					{{setVar "fieldsNeeded" "true"}}
+					"fields": [
+				{{/if}}
+					{
+                				"type": "mrkdwn",
+                				"text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}\u2716{{else}}\u2714{{/if}} {{truncate this.node.description}}\n{{/each}}"
+					},
+              				{
+                				"type": "mrkdwn",
+                				"text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              				}
+			{{else}}
+				{{!-- add the service name to hurray message}}
+			{{/if}}
+		{{/each}}
+		{{#if filedsNeeded}}
+			],
+		{{/if}}
 		"fields": [
 		{{!-- first failure is set to false --}}
-	{{#each message}}
-		{
-                "type": "mrkdwn",
-                "text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}\u2716{{else}}\u2714{{/if}} {{truncate this.node.description}}\n{{/each}}"
-		},
-              {
-                "type": "mrkdwn",
-                "text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
-              }
-	{{#if @last}}
-	],
-	"text": {
+		{{#each message}}
+			{
+                		"type": "mrkdwn",
+                		"text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}\u2716{{else}}\u2714{{/if}} {{truncate this.node.description}}\n{{/each}}"
+			},
+              		{
+                		"type": "mrkdwn",
+                		"text": "*Score/Max Score*\n{{#each this.data.service.scorecards.edges}}{{this.node.scorecardSummaries.nodes.0.score}}/{{this.node.scorecardSummaries.nodes.0.maxScore}}\n{{/each}}"
+              		}
+		{{#if @last}}
+		{{!-- close the fields--}}
+		],
+		"text": {
 			"type": "mrkdwn",
 			"text": "Hurray everything passed"
 		}
