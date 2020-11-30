@@ -27,7 +27,7 @@
               				}
 			{{else}}
 				{{!-- add the service name to hurray message--}}
-				{{#if {ifEq ../passedServices ""}}
+				{{#if (ifEq ../passedServices "")}}
 					{{setVar passedServices this.data.service.name}}}
 				{{else}}
 					{{setVar (appendCommaWithTwoStrings ../passedServices this.data.service.name)}}
