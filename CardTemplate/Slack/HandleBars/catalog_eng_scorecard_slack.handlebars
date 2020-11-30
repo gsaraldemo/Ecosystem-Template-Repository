@@ -5,6 +5,7 @@
 	{
 		"type": "section",
 		{{setVar "fieldsNeeded" "false"}}
+		{{setVar "passedServices" ""}}
 		{{#each message}}
 			{{setVar "failure" "false"}}
 			{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}{{/if}}{{/each}}
@@ -26,6 +27,11 @@
               				}
 			{{else}}
 				{{!-- add the service name to hurray message--}}
+				{{#if {ifEq ../passedServices ""}}
+					{{setVar passedServices this.data.service.name}}}
+				{{else}}
+					{{setVar (appendCommaWithTwoStrings ../passedServices this.data.service.name)}}
+				{{/if}}
 			{{/if}}
 		{{/each}}
 		{{#if (ifEq fieldsNeeded "true")}}
@@ -34,9 +40,9 @@
 		"text": {
 			"type": "mrkdwn",
 			{{#if (ifEq failure "true")}}
-			"text": "Hurray everything passed {{fieldsNeeded}} {{failure}} test"
+			"text": "Hurray {{passedServices}} passed"
 			{{else}}
-			"text": "t passed {{fieldsNeeded}} {{failure}} test"
+			"text": "t passed {{passedServices}} test"
 			{{/if}}
 		}
 	}
