@@ -26,6 +26,12 @@
               				}
 			{{else}}
 				{{!-- add the service name to hurray message--}}
+				"fields": [
+					{
+                				"type": "mrkdwn",
+                				"text": {{failure}}
+					}
+				]
 			{{/if}}
 		{{/each}}
 		{{#if (ifEq filedsNeeded "true")}}
