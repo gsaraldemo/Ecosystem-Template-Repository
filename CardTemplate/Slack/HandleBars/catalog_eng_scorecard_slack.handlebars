@@ -42,9 +42,9 @@
 			{{#if (ifEq passedServices "")}}
 				"text": "Uh-oh!! none of the services passed!!"
 			{{else if (ifEq fieldsNeeded "true")}}
-				"text": "\u1F389\u1F389 Hurray!! **{{passedServices}}** services have passed and here are the failures"
+				"text": ":tada::tada: Hurray!! *{{passedServices}}* services have passed and here is what failed:"
 			{{else}}
-				"text": "\u1F389\u1F389 Hurray!! **{{passedServices}}** services have passed"
+				"text": ":tada::tada: Hurray!! *{{passedServices}}* services have passed"
 			{{/if}}
 		}
 	}
