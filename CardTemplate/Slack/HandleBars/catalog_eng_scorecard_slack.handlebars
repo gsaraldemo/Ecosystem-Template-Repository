@@ -6,7 +6,7 @@
 		"type": "section",
 		{{setVar "fieldsNeeded" "false"}}
 		{{#each message}}
-			{{setVar "failure" "false"}}
+			{{setVar "failure" "true"}}
 			{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}{{/if}}{{/each}}
 			{{#if (ifEq failure 'true')}}
 				{{!--found something wrong, should start fields--}}
