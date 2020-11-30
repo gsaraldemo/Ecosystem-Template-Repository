@@ -5,7 +5,9 @@
 	{
 		"type": "section",
 		"fields": [
-		{{setVar "failure" "false"}}
+		{{#if message}}
+			{{setVar "failure" "false"}}
+		{{/if}}
 		{{!-- first failure is set to false --}}
 	{{#each message}}
 		{
