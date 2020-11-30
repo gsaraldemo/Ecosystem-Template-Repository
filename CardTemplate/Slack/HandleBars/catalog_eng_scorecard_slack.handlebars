@@ -27,7 +27,7 @@
 					},
 					{
                 				"type": "mrkdwn",
-                				"text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}\u2716{{else}}\u2714{{/if}} {{truncate this.node.description}}\n{{/each}}"
+                				"text": "*Status/Description*\n{{#each this.data.service.scorecards.edges}}{{#if (ifEq this.node.scorecardSummaries.nodes.0.Status 'https://pluspng.com/img-png/red-cross-png-red-cross-png-file-2000.png')}}{{setVar "failure" "true"}}\u274C{{else}}\u2705{{/if}} {{truncate this.node.description}}\n{{/each}}"
 					},
               				{
                 				"type": "mrkdwn",
